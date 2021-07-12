@@ -17,16 +17,16 @@ function mousePosition(event) {
   console.log(posX, posY);
 }*/
 
-/* Desestruturada: 
+/* Desestruturada: */
 function mousePosition(event) {
   //Pego só o que eu quero dentro do objeto event:
   const { clientX, clientY } = event;
   console.log(clientX, clientY);
-}*/
+}
 
-/*  MAIS desestruturada: */
+/*  MAIS desestruturada: 
 function mousePosition(clientX, clientY) {
   //Define como argumento aquilo que eu quero e exibo no console:
   console.log(clientX, clientY);
-}
+}*/
 document.addEventListener("click", mousePosition);
