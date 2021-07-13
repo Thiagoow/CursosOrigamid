@@ -1,0 +1,10 @@
+* {
+  background-color: rgb(5, 0, 80);
+}
+
+a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
