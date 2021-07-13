@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primeiro App</title>
+  </head>
+  <body>
+    <div id="appJs" align="center">
+      <p>Total: <span id="total"></span></p>
+      <p>Preço: R$ <span id="preço"></span></p>
+      <button id="button">Comprar</button>
+    </div>
+
+    <script type="application/javascript">
+      const total = document.getElementById("total");
+      const preço = document.getElementById("preço");
+      const button = document.getElementById("button");
+
+      let contador = 1;
+      /* Já atualiza o preço a partir do contador assim que inicia-se o script: */
+      atualizaPreço(contador);
+
+      function atualizaPreço() {
+        total.innerText = contador;
+        preço.innerText = contador * 250;
+      }
+
+      function whenClicked() {
+        contador++;
+        atualizaPreço(contador);
+      }
+
+      button.addEventListener("click", whenClicked);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primeiro App</title>
+
+    <!-- Carrega o React, React Dom e Babel -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/@babel/standalone@7/babel.min.js"
+    ></script>
+  </head>
+  <body>
+    <div id="appReact" align="center">
+      <script type="text/babel">
+        const Loja = () => {
+          // Usamos o Hook useState pra definir uma variável reativa que já começa com o estado 1:
+          const [quantidade, setQuantidade] = React.useState(1);
+          const preçoProduto = 250;
+
+          return (
+            <div>
+              <p>Total: {quantidade}</p>
+              <p>Preço: R$ {quantidade * preçoProduto}</p>
+              <button onClick={() => setQuantidade(quantidade + 1)}>
+                Comprar
+              </button>
+            </div>
+          );
+        };
+
+        // Renderiza na DOM o componente: Loja, no elemento que tiver id = appReact
+        ReactDOM.render(<Loja />, document.getElementById("appReact"));
+      </script>
+    </div>
+  </body>
+</html>
