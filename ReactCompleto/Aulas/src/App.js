@@ -37,11 +37,12 @@ const App = () => {
   const total = filtroPreços.reduce((a, b) => a + b);
 
   return (
-    <div>
+    <div align="center">
       <p>Nome: {dados.cliente}</p>
       <p>Idade: {dados.idade}</p>
       <p>Situação: {dados.ativa}</p>
       <p>Total: {total}</p>
+      <button>2º User</button>
     </div>
   );
 };
