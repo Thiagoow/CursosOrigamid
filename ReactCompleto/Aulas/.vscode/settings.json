@@ -3,9 +3,9 @@
   //Esconde as pastas:
   "files.exclude": {
     "node_modules": true,
-    ".vscode": true,
+    ".vscode": false,
     ".gitignore": true,
-    "package.json": true,
+    "package.json": false,
     "package-lock.json": true,
     "public": true
   }
