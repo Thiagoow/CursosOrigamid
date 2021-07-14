@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "./Aulas/01. Início/Components/Header";
-import Footer from "./Aulas/01. Início/Components/Footer";
+import Header from "./Aulas/01. Início/Components/atoms/Header";
+import Footer from "./Aulas/01. Início/Components/atoms/Footer";
+import Form from "./Aulas/01. Início/Components/molecules/Form";
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
           minHeight: "100vh"
         }}
       >
-        App
+        <Form />
       </main>
       <Footer />
     </div>
