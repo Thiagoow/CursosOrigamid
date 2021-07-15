@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Mostre os dados da aplicação, como apresentado no vídeo
 // Não utilize CSS externo, use o style para mudar as cores
@@ -28,7 +28,7 @@ const mario = {
 };
 
 const App = () => {
-  let dados = useState();
+  let dados;
   dados = mario;
 
   /* Filtra os preços da array usando o map pra cada item (i),
@@ -42,10 +42,11 @@ const App = () => {
   const total = filtroPreços.reduce((a, b) => a + b);
 
   function trocaUser() {
-    if ((dados = mario)) {
+    if (dados === mario) {
       dados = luana;
+    } else {
+      dados = mario;
     }
-    dados = mario;
   }
 
   return (
