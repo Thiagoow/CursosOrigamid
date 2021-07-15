@@ -28,7 +28,7 @@ const mario = {
 };
 
 const App = () => {
-  let dados;
+  let [dados, setDados] = React.useState(true);
   dados = mario;
 
   /* Filtra os preços da array usando o map pra cada item (i),
@@ -41,12 +41,14 @@ const App = () => {
   /* Soma todos os preços (já filtrados pelo filtroPreços) */
   const total = filtroPreços.reduce((a, b) => a + b);
 
+  /* Troca o User com dados analisados: */
   function trocaUser() {
     if (dados === mario) {
-      dados = luana;
+      setDados((dados = luana));
     } else {
-      dados = mario;
+      setDados((dados = mario));
     }
+    console.log(setDados);
   }
 
   return (

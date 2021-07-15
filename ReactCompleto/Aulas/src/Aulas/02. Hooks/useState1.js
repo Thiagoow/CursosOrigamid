@@ -1,4 +1,7 @@
 import React from "react";
+//Utilizados no componente App3:
+import Modal from "./Aulas/02. Hooks/components/atoms/Modal";
+import ButtonModal from "./Aulas/02. Hooks/components/atoms/ButtonModal";
 
 /* Mudando o estado com useState a partir de uma
 função no componente botão: */
@@ -57,4 +60,26 @@ const App2 = () => {
   );
 };
 
-export default App2;
+/* Props -> Podemos passar o estado e a função de 
+modificação(setVar) como propriedades para outros componentes:*/
+const App3 = () => {
+  //Estado definido no componente/elemento global (App.js):
+  const [modal, setModal] = React.useState(false);
+
+  return (
+    <div align="center">
+      {/* O componente "Modal" depende do estado global
+      definido nesse componente para abrir ou não seu componente
+      além disso, depende também da função setModal pra alterar o
+      estado global e poder fechar esse componente: */}
+      <Modal modal={modal} setModal={setModal} />
+
+      {/* Já esse componente abaixo não mostra nada,
+       apenas altera o estado para exibir ou não o componente
+       "Modal": */}
+      <ButtonModal setModal={setModal} />
+    </div>
+  );
+};
+
+export default App3;
