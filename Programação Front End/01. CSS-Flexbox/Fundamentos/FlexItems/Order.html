@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="./assets/img/favicon.svg" />
+    <title>CSS FlexBox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="CSS/Order.css"
+    />
+  </head>
+  <body>
+    <h1>order: misturados;</h1>
+    <section class="container">
+      <div class="item order2">1</div>
+      <div class="item order4">2</div>
+      <div class="item order1">3</div>
+      <div class="item order3">4</div>
+    </section>
+
+    <h1>order: negativo; / flex-grow</h1>
+    <section class="container">
+      <div class="item order2 flex-grow">1</div>
+      <div class="item order-1 flex-grow">2</div>
+      <div class="item order1 flex-grow">3</div>
+      <div class="item order3 flex-grow">4</div>
+    </section>
+
+    <h1>order: valores iguais; / grow / column</h1>
+    <section class="container column">
+      <div class="item order2 flex-grow">1</div>
+      <div class="item order2 flex-grow">2</div>
+      <div class="item order1 flex-grow">3</div>
+      <div class="item order1 flex-grow">4</div>
+    </section>
+
+    <h1>order: valores iguais; / grow / column</h1>
+    <section class="container column">
+      <div class="item flex-grow">1</div>
+      <div class="item order2 flex-grow">2</div>
+      <div class="item flex-grow">3</div>
+      <div class="item order-1 flex-grow">4</div>
+    </section>
+  </body>
+</html>

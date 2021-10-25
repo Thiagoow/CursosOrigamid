@@ -1,0 +1,114 @@
+/* FLEX BASIS AUTO */
+
+.basis-auto {
+  /* flex: GROW SHRINK BASIS; */
+  flex: 1 1 auto;
+}
+
+.basis-auto-grow-2 {
+  flex: 2 1 auto;
+}
+
+.basis-auto-width {
+  flex: 1 1 auto;
+  width: 60px;
+}
+
+.basis-auto-grow-0 {
+  flex: 0 1 auto;
+  /* Esse é o padrão, se você não definir nenhum valor de flex
+  ou para as outras propriedades separadas, o normal será 
+  flex-grow: 0, flex-shrink: 1 e flex-basis: auto. */
+}
+
+/* FLEX BASIS AUTO FIM */
+
+/* FLEX BASIS 0 */
+
+.basis-0 {
+  flex: 1;
+  /* Define flex-grow: 1; flex-shrink: 1; e flex-basis: 0; 
+  (em alguns browsers define como 0%, pois estes ignoram 
+  valores sem unidades, porém a função de 0 e 0% é a mesma.) */
+}
+
+/* O tamanho total é de duas vezes dos itens com flex: 1; */
+.basis-0-grow-2 {
+  flex: 2;
+  /* Define exatamente da mesma forma que o flex: 1; 
+  porém neste caso o flex-grow será de 2, o flex-shrink 
+  continuará 1 e o flex-basis 0. */
+}
+
+.basis-0-width {
+  flex: 1;
+  width: 120px;
+  min-width: 80px;
+}
+
+.basis-0-grow-0 {
+  flex: 0 1 0;
+}
+
+/* FLEX BASIS 0 FIM */
+
+.basis-numero-container {
+  flex-wrap: wrap;
+}
+
+.basis-110 {
+  flex: 0 1 110px;
+}
+
+.basis-300 {
+  flex: 0 1 300px;
+}
+
+.basis-110-porcento {
+  flex: 0 1 calc(25% - 10px);
+}
+
+.basis-110-grow-1 {
+  flex: 1 1 110px;
+}
+
+.basis-600-grow-1 {
+  flex: 1 1 600px;
+}
+
+/* ESTILOS GERAIS */
+
+.item {
+  margin: 5px;
+  background: tomato;
+  text-align: center;
+  font-size: 1.5em;
+  position: relative;
+}
+
+/* Flex Container */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid #ccc;
+}
+
+/* Flex Item */
+img {
+  display: block;
+  max-width: 100%;
+  margin: 10px auto;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0 0 0;
+  font-size: 1.25em;
+  font-weight: normal;
+}
+
+body {
+  font-family: monospace;
+  color: #333;
+}
