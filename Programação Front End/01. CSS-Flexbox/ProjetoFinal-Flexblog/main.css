@@ -23,15 +23,8 @@
 }
 
 /*========= CSS RESET  ===========*/
-body,
-h1,
-h2,
-p,
-ul,
-li,
-a {
-  margin: 0px;
-  padding: 0px;
+html {
+  scroll-behavior: smooth;
 }
 body {
   font-family: var(--body-font);
@@ -49,6 +42,8 @@ img {
 }
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 /*=========== FIXED INFO ===========*/
