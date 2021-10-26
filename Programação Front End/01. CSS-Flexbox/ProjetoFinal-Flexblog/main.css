@@ -213,7 +213,7 @@ img {
 
 /*=========== PREÇO ===========*/
 .preço {
-  background: var(var(--container-bg-color));
+  background: var(--container-bg-color);
   padding: 60px;
   display: flex;
   flex-wrap: wrap;
@@ -440,4 +440,47 @@ e no 3º item depois dele: */
   text-align: center;
   font-size: var(--p-font-size);
   font-weight: bold;
+}
+
+/*========== SCROLL UP ==========*/
+.scrollUp {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background-color: var(--secondary-color);
+  opacity: 0.8;
+  padding: 0 0.3rem;
+  border-radius: 0.4rem;
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+}
+
+.scrollUp:hover {
+  background-color: var(--primary-color);
+}
+
+.scrollUp_icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Show scroll */
+.show-scroll {
+  bottom: 5rem;
+}
+
+/*========== SCROLL BAR ==========*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: var(--scroll-bar-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-color-light);
 }
