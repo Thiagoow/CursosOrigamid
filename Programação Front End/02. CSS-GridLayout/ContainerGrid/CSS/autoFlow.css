@@ -3,20 +3,30 @@
   display: grid;
 }
 
+/* 
+grid-auto-flow: row
+☝🏼 Quebra automaticamente os itens
+em novas linhas. É o flow PADRÃO. */
+
 .grid-auto-flow-1 {
   grid-auto-flow: column;
+  /* ☝🏼 Quebra automaticamente os 
+  itens em novas colunas. */
 }
 
 .grid-auto-flow-2 {
   grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-auto-flow: column;
   grid-template-rows: 50px 50px;
   grid-auto-columns: 100px;
-  grid-auto-flow: column;
 }
 
 .grid-auto-rows-2 {
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: dense;
+  /* ☝🏼 Tenta posicionar o máximo dos elementos
+  que existirem nas primeiras partes vazias do grid 
+  (pode desorganizar o conteúdo). */
 }
 
 .item-2 {

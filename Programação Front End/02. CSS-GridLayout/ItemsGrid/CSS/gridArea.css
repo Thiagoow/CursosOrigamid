@@ -1,0 +1,206 @@
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 50px;
+}
+
+/* EXEMPLO 1 */
+
+.grid-area-1 .item-1 {
+  grid-area: 1 / 2 / 4 / 3;
+  /* Esse item-1 começa na linha 
+  superior 1, e tb começa na linha 
+  esquerda 2, da 2º coluna
+  
+  /
+  
+  Termina na linha inferior 4, e tb termina 
+  na linha direita 3 == (Ocupando coluna2 inteira)
+  */
+
+  /* Sendo o code acima ☝🏼, 
+  o mesmo que o abaixo 👇🏽*/
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-row-end: 4;
+  grid-column-end: 3;
+}
+
+.grid-area-1 .item-5 {
+  grid-area: span 2 / 3;
+  /* Esse item-5, se expande da linha superior 2
+  até a linha inferior 3 = Ocupando a linha 3 inteira */
+
+  /* Sendo o code acima ☝🏼, a mesma coisa
+  que fazer isso abaixo 👇🏽 */
+  grid-row-start: span 2;
+  grid-column-start: 3;
+}
+
+/* EXEMPLO 2 */
+
+.grid-area-2 {
+  grid-template-areas:
+    "header header header"
+    "sidenav content ads"
+    "sidenav footer footer";
+}
+
+.grid-area-2 .item-1 {
+  grid-area: header;
+  /* O item-1 vai começar e terminar
+  em toda o header (que se expande nas
+  3 colunas) = Ocupando toda a linha 1 */
+}
+
+.grid-area-2 .item-2 {
+  grid-area: sidenav;
+  /* O item-2 vai começar e terminar
+  em toda a sidenav (que ocupa a 1º 
+  coluna a partir da linha 2) = Ocupará
+  a 1º coluna, do começo da linha 
+  superior da sidenav, até o fim da 
+  linha inferior da sidenav. */
+}
+
+.grid-area-2 .item-3 {
+  grid-area: content;
+  /* O item-3 vai começar e terminar 
+  em toda o content (que ocupa a 2º coluna,
+  da 2º, até a 3º linha) = Ocupará a 2º
+  célula inteira da coluna2. */
+}
+
+.grid-area-2 .item-4 {
+  grid-area: ads;
+  /* O item-4 vai começar e terminar 
+  em toda o ads (que ocupa a 2º coluna,
+  da 3º, até a 4º linha) = Ocupará a 2º
+  célula inteira da coluna3. */
+}
+
+.grid-area-2 .item-5 {
+  grid-area: footer;
+  /* O item-3 vai começar e terminar 
+  em toda o footer (que ocupa a 2º coluna, da segunda, 
+  até 4º linha) = Ocupará a 2º e 3º células inteiras 
+  da linha3 e colunas 2 & 3. */
+}
+
+/* EXEMPLO 3 */
+
+.grid-area-3 {
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  /* Usando o autofit, insere o máximo de itens que ele
+  conseguir para preencher o container, que tenham no mínimo
+  80px, e no máximo 1fr (para preencher o container caso ele
+  aumente). */
+}
+
+.grid-area-3 .item-1 {
+  grid-row: 2 / 4;
+  /* Começa da 2º linha inferior, e termina na 
+  4º linha inferior. Ocupando as linhas2 e 3 da grid */
+  grid-column: 2 / 5;
+  /* Começa da linha 2 esquerda, e 
+  termina na linha 5 direita. Ocupando
+  da 2º até a 3º coluna da grid. */
+
+  background: rgb(255, 0, 0);
+  /* Mistura as cores de cada item
+  onde eles se juntam: */
+  mix-blend-mode: screen;
+}
+
+.grid-area-3 .item-2 {
+  grid-area: 3 / 3 / span 3 / 5;
+  /* Esse item-2 começa na linha 
+  superior 3, e tb começa na linha 
+  direita 3, da 3º coluna
+  
+  /
+  
+  span até a linha superior 3, e termina na
+  linha direita 5 == (Ocupando coluna3 e 4)
+  */
+
+  /* Sendo o code acima ☝🏼, 
+  o mesmo que o abaixo 👇🏽*/
+  grid-row-start: 3;
+  grid-column-start: span 3;
+  grid-row-end: 3;
+  grid-column-end: 5;
+
+  background: rgb(0, 255, 0);
+  /* Mistura as cores de cada item
+  onde eles se juntam: */
+  mix-blend-mode: screen;
+}
+
+.grid-area-3 .item-12 {
+  grid-row-start: 1;
+  grid-column-start: 4;
+  /* Esse item-12 começa na linha 
+  superior 1, e tb começa na linha 
+  direita 4, da 3º coluna */
+  grid-row-end: 7;
+  grid-column-end: 6;
+  /* Termina na linha inferior 7, e tb termina 
+  na linha direita 6 == (Ocupando coluna3 e 4 inteira) */
+
+  /* Sendo o code acima ☝🏼, 
+  o mesmo que o abaixo 👇🏽*/
+  grid-area: 1 / 4 / 7 / 6;
+
+  background: rgb(0, 0, 255);
+  /* Mistura as cores de cada item
+  onde eles se juntam: */
+  mix-blend-mode: screen;
+}
+
+/* Grid Item */
+.item {
+  margin: 5px;
+  background: tomato;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.grid {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: normal;
+}
+
+body {
+  font-family: monospace;
+  color: #333;
+  padding-bottom: 60px;
+  margin: 0px;
+}
+
+body > div {
+  padding: 40px 0;
+}
+
+body > div:nth-of-type(even) {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+body > div > img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
