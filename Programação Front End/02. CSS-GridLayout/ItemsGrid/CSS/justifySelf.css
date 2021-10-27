@@ -1,3 +1,6 @@
+/* justify-self --> Alinha HORIZONTALMENTE
+um item específico/individual da grid. */
+
 /* Grid */
 .grid {
   display: grid;
