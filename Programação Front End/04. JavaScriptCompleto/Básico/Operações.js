@@ -1,3 +1,19 @@
+/* Operadores aritméticos:
+'+' 
+'-' 
+'*' 
+'/' 
+'%'->(mod = resto da operação) 
+'++'->(incrementar +1) 
+'--'->(decrementar)
+*/
+
+/* Operadores lógicos:
+&& --> "e"
+|| --> "Ou"
+! --> "Not" --> Inverte o valor boolean da variável
+*/
+
 //1----------------------------
 console.warn("Exemplo 1:");
 
