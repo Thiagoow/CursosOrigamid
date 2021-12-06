@@ -1,0 +1,1 @@
+//Selecionado elementos no DOM:
