@@ -179,7 +179,7 @@ console.warn("Exercícios:");
 /* Verifica a distância da 1º imagem
 em relação ao topo da página: */
 const imgTop = img.offsetTop;
-console.log("First img" + imgTop);
+console.log("First img " + imgTop);
 
 // Retorna a soma da largura de todas as imagens:
 function somaImagens() {
@@ -191,7 +191,7 @@ function somaImagens() {
   console.log("Soma width de todas as imagens: " + soma);
 }
 
-window.onload = function () {
+window.onload = () => {
   somaImagens();
 };
 
