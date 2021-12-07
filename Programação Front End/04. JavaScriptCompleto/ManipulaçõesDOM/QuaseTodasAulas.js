@@ -355,11 +355,10 @@ allBodyElements.forEach((element) => {
 // Se o usuário clicar na tecla "t", aumente todo o texto do site.
 function handleClickT(event) {
   console.log(event.key);
-  let tKey,
-    plusKey = false;
+  let tKey = false;
 
   if (event.key === "t") {
-    tKey, (plusKey = true);
+    tKey = true;
     //document.documentElement.classList.toggle("textoMaior");
     console.log("Texto aumentado :)");
   }
@@ -370,4 +369,93 @@ window.addEventListener("keydown", handleClickT);
 //6----------------Traversing e Manipulação:
 console.error("Exemplo6 - Traversing e Manipulação:");
 
-//
+console.log("outerHTML " + h2Animais.outerHTML); // todo o html do elemento
+console.log("innerHTML " + h2Animais.innerHTML); // html interno
+console.log("innerText " + h2Animais.innerText); // texto, sem tags
+//h2Animais.innerText = '<p>Texto</p>'; // a tag vai como texto
+//h2Animais.innerHTML = '<p>Texto</p>'; // a tag é renderizada
+
+/*Traversing -> Navegar na DOM, utilizando suas props e methods:*/
+const lista = document.querySelector(".animais-lista");
+//Elemento pai:
+lista.parentElement;
+//Pai do elemento pai:
+lista.parentElement.parentElement;
+//Elemento acima:
+lista.previousElementSibling;
+//Elemento abaixo:
+lista.nextElementSibling;
+//HTMLCollection com os filhos:
+lista.children;
+//1º filho:
+lista.children[0];
+//Último filho:
+lista.children[--lista.children.length];
+
+//Todas as LI's:
+lista.querySelectorAll("li");
+//Último filho:
+lista.querySelector("li:last-child");
+
+/* Element vs Node
+
+elements -> Tags html
+Node --> Nó, pode ser uma tag, txt, comentário,
+quebra de linha ou mais.
+*/
+//Elemento acima:
+lista.previousElementSibling;
+//Node acima:
+lista.previousSibling;
+
+//1º node child:
+lista.firstChild;
+//Todos os node child:
+lista.childNodes;
+
+/* Movendo elementos com node: */
+// move X para o final do elemento:
+element.appendChild(X);
+// insere X antes de Y
+element.insertBefore(X, Y);
+// remove Y de element
+element.removeChild(Y);
+// substitui Y por X
+element.replaceChild(X, Y);
+
+/* Criando novos elementos: */
+const novoH1 = document.createElement("h1");
+novoH1.innerText = "Novo Título";
+novoH1.classList.add("titulo");
+//Insere ele no fim da tag:
+animais.insertBefore(animais, novoH1);
+
+/* Clonando elementos: */
+const titulo = document.querySelector("h1");
+const titulo2 = document.querySelector("h1");
+const novoTitulo = titulo; // titulo, titulo2 e novoTitulo são iguais
+//Com o .cloneNode:
+const cloneTitulo = titulo.cloneNode(true);
+
+const contato = document.querySelector(".contato");
+contato.appendChild(cloneTitulo);
+
+//----------------Exercícios 3:
+console.error("Exercícios 3:");
+
+// Duplique o menu e adicione ele em copy
+const copy = document.querySelector(".copy");
+
+const cloneMenu = menu.cloneNode(true);
+copy.appendChild(cloneMenu);
+
+// Selecione o primeiro DT da dl de Faq
+const faq = document.querySelector(".faq");
+const primeiroDt = faq.querySelector("dt");
+
+// Selecione o DD referente ao primeiro DT
+const proximoDD = primeiroDt.nextElementSibling;
+console.log(proximoDD);
+
+// Substitua o conteúdo html de .faq pelo de .animais
+faq.innerHTML = animais.innerHTML;
