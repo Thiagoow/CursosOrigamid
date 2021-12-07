@@ -121,3 +121,103 @@ console.log(link);
 
 //4-------------- Dimensões e Distâncias:
 console.warn("Exemplo4:");
+
+const section = document.querySelector(".animais-lista");
+console.log(section);
+
+console.log("clientHeight -> " + section.clientHeight + "px"); // height + padding
+console.log("offsetHeight -> " + section.offsetHeight + "px"); // height + padding + border
+console.log("scrollHeight -> " + section.scrollHeight + "px"); // height total, mesmo dentro de um scroll
+
+//Sendo a mesma coisa para o width:
+console.log("");
+console.log("clientWidth -> " + section.clientWidth + "px"); // Width + padding
+console.log("offsetWidth -> " + section.offsetWidth + "px"); // Width + padding + border
+console.log("scrollWidth -> " + section.scrollWidth + "px"); // Width total, mesmo dentro de um scroll
+console.log("");
+
+// Distância entre o topo do elemento e o topo da página:
+console.log("offsetTop -> " + section.offsetTop + "px");
+// Distância entre o canto esquerdo do elemento e o canto esquerdo da página:
+console.log("offsetLeft -> " + section.offsetLeft + "px");
+console.log("");
+
+/* 
+getBoundingClientRect() -> Método que retorna um objeto 
+com valores de width, height, distâncias do elemento e mais.
+*/
+
+const rect = section.getBoundingClientRect();
+console.log("RectHeight -> " + rect.height); // height do elemento
+console.log("RectWidth -> " + rect.width); // width do elemento
+console.log("RecTop -> " + rect.top); // distância entre o topo do elemento e o scroll
+
+window.innerWidth; // width da janela
+window.outerWidth; // soma dev tools também
+window.innerHeight; // height da janela
+window.outerWidth; // soma a barra de endereço
+window.pageYOffset; // distância total do scroll horizontal
+window.pageXOffset; // distância total do scroll vertical
+
+if (window.innerWidth < 600) {
+  console.log("Tela menor que 600px");
+}
+
+/* matchMedia() -> Utilize uma media-query como no CSS 
+para verificar a largura do browser */
+const small = window.matchMedia("(max-width: 800px)");
+
+if (small.matches) {
+  console.log("Tela < que 800px");
+} else {
+  console.log("Tela > que 800px");
+}
+
+//----------Exercícios:
+console.warn("Exercícios:");
+
+/* Verifica a distância da 1º imagem
+em relação ao topo da página: */
+const imgTop = img.offsetTop;
+console.log("First img" + imgTop);
+
+// Retorna a soma da largura de todas as imagens:
+function somaImagens() {
+  const imagens = document.querySelectorAll("img");
+  let soma = 0;
+  imagens.forEach((imagem) => {
+    soma += imagem.offsetWidth;
+  });
+  console.log("Soma width de todas as imagens: " + soma);
+}
+
+window.onload = function () {
+  somaImagens();
+};
+
+/* Verifica se os links da página possuem
+o mínimo recomendado para telas utilizadas
+com o dedo. (48px/48px de acordo com o google): */
+const links = document.querySelectorAll("a");
+
+links.forEach((link) => {
+  const linkWidth = link.offsetWidth;
+  const linkHeight = link.offsetHeight;
+  if (linkWidth >= 48 && linkHeight >= 48) {
+    console.log(link, "Possui boa acessibilidade");
+  } else {
+    console.log(link, "Não possui boa acessibilidade");
+  }
+});
+
+/* Se o browser for menor que 720px,
+adicione a classe menu-mobile ao menu: */
+const browserSmall = window.matchMedia("(max-width: 720px)").matches;
+
+if (browserSmall) {
+  const menu = document.querySelector(".menu");
+  menu.classList.add("menu-mobile");
+}
+
+//5-------------- Eventos:
+console.warn("Exemplo5:");
