@@ -108,6 +108,10 @@ html {
   grid-column: 2;
 }
 
+.animais-lista li {
+  cursor: pointer;
+}
+
 .animais-lista::-webkit-scrollbar {
   width: 18px;
 }
@@ -221,4 +225,81 @@ html {
   .copy {
     margin-bottom: 0px;
   }
+}
+
+.js-tabcontent section {
+  display: none;
+}
+@keyframes showSection {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.js-tabcontent section.ativo {
+  display: block !important;
+  animation: showSection 0.5s forwards;
+}
+
+.js .js-accordion dd {
+  display: none;
+}
+/* Add a setinha animada: */
+.js-accordion dt::after {
+  content: "⮯";
+  margin-left: 10px;
+}
+@keyframes showFAQ {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -15px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.js .js-accordion dd.ativo {
+  display: block !important;
+  animation: showFAQ 0.5s ease-in-out;
+}
+/* Muda a setinha animada pra cima: */
+.js-accordion dt.ativo::after {
+  content: "⮭";
+  margin-left: 10px;
+}
+
+/*========== SCROLL UP ==========*/
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+.scrollUp {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background: #fb5;
+  opacity: 0.8;
+  padding: 0.6rem 0.6rem;
+  border-radius: 20px;
+  z-index: 1000;
+  transition: 0.4s;
+}
+.scrollUp:hover {
+  background: #e54;
+}
+.scrollUp_icon {
+  font-size: 1.5rem;
+  color: white;
+}
+/* Show scroll */
+.show-scroll {
+  bottom: 20%;
 }
