@@ -62,10 +62,41 @@ function initAccordionNav() {
 initAccordionNav();
 
 //3-------------------Scrollar pro topo da página:
-function scrollUp() {
+function initScrollUp() {
   const scrollUp = document.getElementById("scroll-up");
   // When the scroll is higher than 60 viewport height, add the show-scroll class to the a tag with the scroll-Up class
   if (this.scrollY >= 60) scrollUp.classList.add("show-scroll");
   else scrollUp.classList.remove("show-scroll");
 }
-window.addEventListener("scroll", scrollUp);
+window.addEventListener("scroll", initScrollUp);
+
+//4-------------------Scroll animations:
+function initAnimaScroll() {
+  const sections = document.querySelectorAll(".js-scroll");
+  const className = "ativaScrollAnim";
+
+  // Se existir essas div com essa classe:
+  if (sections.length) {
+    //Add a classe ativa pra primeira seção sempre:
+    sections[0].classList.add(className);
+    //55% da tela do user:
+    const screenSizeToAnimate = window.innerHeight * 0.55;
+
+    function scrollAnimate() {
+      //Pra cada uma das seções:
+      sections.forEach((i) => {
+        //Pega a distância do topo - o tamanho ideal de tela do user:
+        const sectionTop = i.getBoundingClientRect().top - screenSizeToAnimate;
+        //Testando --> console.log(`${i.id} -> ${sectionTop}`);
+
+        //IF com operador ternário:
+        sectionTop < 0
+          ? i.classList.add(className)
+          : i.classList.remove(className);
+      });
+    }
+
+    window.addEventListener("scroll", scrollAnimate);
+  }
+}
+initAnimaScroll();
