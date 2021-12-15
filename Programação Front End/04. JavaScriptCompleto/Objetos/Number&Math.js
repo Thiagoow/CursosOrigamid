@@ -106,10 +106,13 @@ arredondados depois retorne a soma total */
 const listaPrecos = ["R$ 59,99", " R$ 100,222", "R$ 230  ", "r$  200"];
 
 function filtraPrecos(preco) {
+  // No começo do item -> Converte de String pra Number
+
   //Deixa tudo maiúsculo, tira o R$, os espaços do começo e final:
   preco = +preco.toUpperCase().replace("R$ ", " ").trim().replace(",", ".");
-  //Converte de String pra num dnv com o + na frente e arredonda pra 2 casas:
+  //Arredonda pra 2 casas decimais:
   preco = +preco.toFixed(2);
+  //Retorna o preço filtrado
   return preco;
 }
 
